@@ -1,0 +1,28 @@
+<%- include('../partials/head.ejs') %> 
+</head>
+<%- include("../partials/nav.ejs") %> 
+<body>
+  <h1><%= title %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>Flight Number</th>
+        <th>Departs:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Flights.forEach(f => { %>
+        <tr>
+          <td><%= f.airline %></td>
+          <td><%= f.airport %></td>
+          <td><%= f.flightNo %></td>
+          <td><%= f.departs %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</body>
+</html>
