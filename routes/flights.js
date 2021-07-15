@@ -6,6 +6,8 @@ const router = Router()
 router.get('/', flightsCtrl.index)
 router.post("/", flightsCtrl.create)
 router.get("/new", flightsCtrl.newFlight)
+router.get("/:id", flightsCtrl.show)
+router.post("/:id/tickets", flightsCtrl.createTicket)
 
 export {
   router
