@@ -9,6 +9,22 @@
         <div>Airport: <%= flight.airport%></div>
         <div>Departs: <%= flight.departs %></div>
       </section>
+      <h4>Destinations:</h4>
+      <ul>
+        <%- flight.destinations.map(p => 
+          `<li>${p.airport}</li>`)%>
+      </ul>
+    </section>
+      
+    <% // add to cast form below this comment %>
+    <form id="add-per-to-cast" action="/flights/<%= flight._id %>/destinations" method="POST">
+      <select name="destinationId">
+        <%- destinations.map(p => 
+          `<option value="${p._id}">${p.airport}</option>`
+        ).join('') %>
+      </select>
+      <button type="submit">Add to Flight's Destinations</button>
+    </form>
       <section>
           <h2>Available Tickets:</h2>
           <% if (flight.tickets.length) { %>
